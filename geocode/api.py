@@ -18,7 +18,7 @@ class GeocodeClient(object):
     def _prepare_address(self):
         if u'address' in self.data:
             splitted = [w for w in self.data['address'].split(' ') if w]
-            data['address'] = u"+".join(splitted)
+            self.data['address'] = u"+".join(splitted)
 
     def _data_join(self):
         qs_list = [u'{}={}'.format(k, v) for k, v in self.data.items()]
