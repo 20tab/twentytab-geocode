@@ -24,14 +24,15 @@ class GeocodeClient(object):
         qs_list = [u'{}={}'.format(k, v) for k, v in self.data.items()]
         return u'&'.join(qs_list)
 
-    def get(self):
+    def uri(self):
         self.data[u'key'] = self.key
         self.data[u'address'] = self.address
 
-        path = u'{}/{}?{}'.format(
+        return u'{}/{}?{}'.format(
             self.url,
             self.api_type,
             self._data_join()
         )
 
-        return requests.get(path)
+    def get(self):
+        return requests.get(self.uri())
