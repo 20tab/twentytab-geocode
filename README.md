@@ -1,4 +1,4 @@
-twentytab-choicesfilter
+twentytab-geocode
 =======================
 
 It's a simple python client that uses google geocode api
